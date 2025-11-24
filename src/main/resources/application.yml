@@ -1,0 +1,19 @@
+server:
+  port: 8080
+spring:
+  config:
+    import: optional:file:.env[.properties]
+  profiles:
+    active: dev
+    include: secret
+  jpa:
+    hibernate:
+      ddl-auto: update
+  ai:
+    openai:
+      chat:
+        options:
+          model: gpt-4o-mini
+          temperature: 0.7
+      embeddings:
+        model: text-embedding-3-small
