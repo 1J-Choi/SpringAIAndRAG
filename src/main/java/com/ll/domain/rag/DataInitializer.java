@@ -2,6 +2,7 @@ package com.ll.domain.rag;
 
 import com.ll.domain.post.entity.Post;
 import com.ll.domain.post.repository.PostRepository;
+import com.ll.domain.post.service.PostVectorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
@@ -13,7 +14,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class DataInitializer {
     private final PostRepository postRepository;
-    private final RagService ragService;
+    private final PostVectorService postRagService;
 
     @Bean
     CommandLineRunner initRagData() {
@@ -99,7 +100,7 @@ public class DataInitializer {
 
                 // 2. RAG 벡터 색인 (MariaDB VECTOR에 저장)
                 for (Post post : savedPosts) {
-                    ragService.indexPost(post);
+                    postRagService.indexPost(post);
                 }
 
                 System.out.println("✅ RAG 벡터 색인 완료!");

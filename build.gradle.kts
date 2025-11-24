@@ -40,7 +40,11 @@ dependencies {
 	implementation ("org.springframework.ai:spring-ai-openai-spring-boot-starter")
 	implementation ("org.springframework.ai:spring-ai-chroma-store-spring-boot-starter")
 	// MariaDB Driver
-	implementation("org.mariadb.jdbc:mariadb-java-client")
+	implementation("org.mariadb.jdbc:mariadb-java-client:3.5.2")
+	implementation("org.springframework.ai:spring-ai-starter-model-openai") // Chat
+	implementation("org.springframework.ai:spring-ai-openai")// Embedding
+	implementation("org.springframework.ai:spring-ai-rag")
+	implementation("org.springframework.ai:spring-ai-starter-vector-store-mariadb")
 	// QueryDSL
 	implementation("com.querydsl:querydsl-jpa:5.0.0:jakarta")
 	annotationProcessor ("com.querydsl:querydsl-apt:5.0.0:jakarta")

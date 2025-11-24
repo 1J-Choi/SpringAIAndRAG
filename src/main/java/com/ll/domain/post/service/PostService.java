@@ -2,14 +2,11 @@ package com.ll.domain.post.service;
 
 import com.ll.domain.post.entity.Post;
 import com.ll.domain.post.repository.PostRepository;
-import com.ll.domain.rag.RagService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
